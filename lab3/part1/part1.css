@@ -1,6 +1,13 @@
 html {
   background-color: white;
 }
+h1 {
+  color: darkslategray;
+  font-size: 2rem;
+  border-bottom: 10px dotted purple;
+  padding-bottom: 0.3rem;
+}
+  
 
 body {
   font: 1.2em / 1.5 system-ui;
