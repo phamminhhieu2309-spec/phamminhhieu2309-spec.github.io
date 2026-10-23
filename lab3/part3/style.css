@@ -25,6 +25,11 @@ img {
 .grid {
   margin: 0 auto;
   max-width: 980px;
+
+  /* ⭐ REQUIRED for screenshot layout */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
 }
 
 nav {
@@ -36,6 +41,10 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  /* ⭐ Make nav horizontal like screenshot */
+  display: flex;
+  gap: 1em;
 }
 
 nav a {
@@ -54,6 +63,7 @@ nav a {
   width: 200px;
 }
 
+/* ⭐ Make the second photo larger */
 .photos li:nth-child(2) img {
   width: 400px;
 }
