@@ -1,0 +1,53 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Hussar";
+  src: url("../fonts/hussar/misc/HussarBoldWeb-bf92.woff");
+}
+@font-face {
+  font-family: "Swansea";
+  src: url("../fonts/swansea/Swansea-q3pd.ttf");
+}
+@font-face {
+  font-family: "SwanseaBold";
+  src: url("../fonts/swansea/SwanseaBold-D0ox.ttf");
+}
+body {
+  margin: 0 auto;
+  padding: 0 20px;
+  min-width: 980px;
+  max-width: 1400px;
+}
+h1, h2, h3{
+  font-family: Hussar;
+}
+/* Layout */
+p,li,span{
+  font-family: Swansea, Arial, Impact, Stencil;
+}
+strong{
+  font-family: SwanseaBold;
+}
+main {
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+/* header and footer */
+
+header {
+  border-bottom: 5px solid #aa6666;
+}
+
+footer {
+  border-top: 5px solid #aa6666;
+}
+
+footer p {
+  text-align: center;
+}
