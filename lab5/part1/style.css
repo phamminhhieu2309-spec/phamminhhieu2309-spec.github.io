@@ -52,7 +52,7 @@ p, li, table {
 /* || header layout */
 
 nav, article, footer, .secondary {
-  background-color: green;
+  background-color: #f5f5f5;
 }
 
 article, footer, .secondary {
