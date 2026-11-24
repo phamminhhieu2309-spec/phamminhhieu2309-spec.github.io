@@ -18,15 +18,15 @@ body {
 
 /* || typography */
 h1 {
-    font-size: 30px !important;
+    font-size: 2rem;
     color: #333333;
 }
 h2 {
-    font-size: 30px !important;
+    font-size: 2rem;
     color: #333333;
 }
 h3 {
-    font-size: 30px !important;
+    font-size: 2rem;
     color: #333333;
 }
 p, input, li, table, label {
