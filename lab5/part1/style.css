@@ -55,6 +55,11 @@ nav, article, footer, .secondary {
   background-color: #f5f5f5;
 }
 
+article,
+.secondary {
+  color: #222;
+}
+
 article, footer, .secondary {
   padding: 10px 30px;
 }
