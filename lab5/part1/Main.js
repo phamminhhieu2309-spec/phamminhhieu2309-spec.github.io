@@ -1,55 +1,47 @@
-/*
-Name: Shiro
-File: main.js
-Date: 12 August 2026
-Description: JavaScript for the Bear Accessibility Troubleshooting page.
-*/
+// functionality for showing/hiding the comments section
 
-// Show/hide button for the bear details
-const toggleButton = document.getElementById('toggle-details');
-const detailsSection = document.getElementById('details');
+const showHideBtn = document.querySelector('.show-hide');
+const commentWrapper = document.querySelector('.comment-wrapper');
 
-toggleButton.addEventListener('click', () => {
-  const isHidden = detailsSection.classList.toggle('hidden');
+commentWrapper.style.display = 'none';
 
-  if (isHidden) {
-    toggleButton.textContent = 'Show details';
-    toggleButton.setAttribute('aria-expanded', 'false');
+showHideBtn.onclick = function() {
+  let showHideText = showHideBtn.textContent;
+  if(showHideText === 'Show comments') {
+    showHideBtn.textContent = 'Hide comments';
+    commentWrapper.style.display = 'block';
   } else {
-    toggleButton.textContent = 'Hide details';
-    toggleButton.setAttribute('aria-expanded', 'true');
+    showHideBtn.textContent = 'Show comments';
+    commentWrapper.style.display = 'none';
   }
-});
+};
 
-// Comment form functionality
-const commentForm = document.getElementById('comment-form');
-const commentList = document.getElementById('comment-list');
+// functionality for adding a new comment via the comments form
 
-commentForm.addEventListener('submit', (e) => {
+const form = document.querySelector('.comment-form');
+const nameField = document.querySelector('#name');
+const commentField = document.querySelector('#comment');
+const list = document.querySelector('.comment-container');
+
+form.onsubmit = function(e) {
   e.preventDefault();
+  submitComment();
+};
 
-  const nameInput = document.getElementById('comment-name');
-  const commentInput = document.getElementById('comment-text');
+function submitComment() {
+  const listItem = document.createElement('li');
+  const namePara = document.createElement('p');
+  const commentPara = document.createElement('p');
+  const nameValue = nameField.value;
+  const commentValue = commentField.value;
 
-  const name = nameInput.value.trim();
-  const comment = commentInput.value.trim();
+  namePara.textContent = nameValue;
+  commentPara.textContent = commentValue;
 
-  if (name === '' || comment === '') {
-    alert('Please fill out both fields before submitting.');
-    return;
-  }
+  list.appendChild(listItem);
+  listItem.appendChild(namePara);
+  listItem.appendChild(commentPara);
 
-  // Create new comment item
-  const newComment = document.createElement('li');
-  newComment.innerHTML = `<strong>${name}</strong>: ${comment}`;
-
-  // Add ARIA live region for screen readers
-  commentList.setAttribute('aria-live', 'polite');
-
-  // Append comment
-  commentList.appendChild(newComment);
-
-  // Clear fields
-  nameInput.value = '';
-  commentInput.value = '';
-});
+  nameField.value = '';
+  commentField.value = '';
+}
